@@ -86,6 +86,8 @@ const installeur = `<!doctype html>
   code { background: #eceff3; padding: 1px 5px; border-radius: 4px; }
   h2 { font-size: 1.1rem; margin-top: 1.7em; }
   .apercu { width: 100%; border: 1px solid #d5dae1; border-radius: 10px; display: block; }
+  .citation { border-left: 3px solid rgb(13,148,136); margin: 1.3em 0; padding: .7em 1.1em; background: #fff; border-radius: 0 10px 10px 0; font-style: italic; }
+  .citation .qui { display: block; margin-top: .45em; font-style: normal; font-size: .9em; color: #5b6672; }
   summary { cursor: pointer; background: #fff; border: 1px solid #9aa4b2; border-radius: 8px; padding: 10px 14px; font-weight: 600; }
   summary:hover { background: #eef1f5; }
   details { margin: 1.1em 0; }
@@ -94,6 +96,8 @@ const installeur = `<!doctype html>
 </style>
 <h1>🎯 Calc Accuracy — la vraie proba de KO, précision incluse</h1>
 <p>Ajoute au <a href="https://calc.pokemonshowdown.com">calculateur de dégâts Showdown</a> la probabilité de KO réelle, précision des attaques incluse. Fonctionne sur les onglets <strong>One vs One</strong> et <strong>Champions</strong>.</p>
+<blockquote class="citation">« Ce serait bien que le calculateur tienne compte de la précision des moves. »
+<span class="qui">— HARI · « Ouais, c'est vrai. Ça pourrait être bien. » — Redemption · <a href="https://youtu.be/q95L2plo8RI?t=2930">voir le moment (48:50)</a></span></blockquote>
 <h2>À quoi ça ressemble</h2>
 <p class="astuce">Ce qui est en vert-bleu est ajouté par le bookmarklet. Ici le calculateur annonce « guaranteed OHKO », mais Stone Edge ne touche que 80 % du temps — la vraie probabilité est donc 80 % :</p>
 <img class="apercu" src="data:image/jpeg;base64,${apercuStoneEdgeB64}" alt="Sous le résultat « guaranteed OHKO » du calculateur, le bookmarklet ajoute « Avec la précision (80 %) : 80 % de OHKO »">
