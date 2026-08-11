@@ -126,7 +126,7 @@ const installeur = `<!doctype html>
 <ul>
   <li><strong>Rien ne s'installe sur l'ordinateur.</strong> Un bookmarklet est un simple favori de navigateur : il n'agit que sur la page du calculateur, au moment où on clique dessus, et se supprime comme n'importe quel favori.</li>
   <li><strong>Tout le code est visible.</strong> L'URL du favori contient l'intégralité du programme (dans « installation manuelle » ci-dessus, tu peux le lire en entier). Aucune requête réseau, aucune donnée collectée ou envoyée, aucun accès à tes comptes.</li>
-  <li><strong>Un doute ? Vérifie par toi-même.</strong> Copie l'URL du bookmarklet — <button id="copier-securite">Copier l'URL</button> <span id="copie-ok-securite"></span> — et colle-la à Claude ou ChatGPT avec la question « Que fait ce code ? Est-il sûr ? » — ou fais-la relire à quelqu'un qui code. Le programme est court, la réponse prend trente secondes.</li>
+  <li><strong>Un doute ? Vérifie par toi-même.</strong> Un favori-bookmarklet n'est pas un lien vers un site : son champ « URL » contient le programme entier, en clair — c'est ce code que le bouton ci-dessus installe, et rien d'autre. <button id="copier-securite">Copier le code du favori</button> <span id="copie-ok-securite"></span> — colle-le à Claude ou ChatGPT (« Que fait ce code ? Est-il sûr ? ») ou fais-le relire à quelqu'un qui code : réponse en trente secondes. Méfiance maximale ? Vérifie <em>après</em> l'installation ce qui est réellement chez toi : clic droit sur le favori → « Modifier… » — tu y verras ce même code, en entier.</li>
 </ul>
 <script>
   (function () {
