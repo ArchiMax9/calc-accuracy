@@ -65,8 +65,9 @@ function echapperHTML(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 const paye = echapperHTML(bookmarklet);
-/* capture d'écran d'exemple, intégrée à la page pour qu'elle reste un fichier unique */
-const apercuB64 = fs.readFileSync(path.join(__dirname, 'apercu-installer.jpg')).toString('base64');
+/* captures d'écran d'exemple, intégrées à la page pour qu'elle reste un fichier unique */
+const apercuStoneEdgeB64 = fs.readFileSync(path.join(__dirname, 'apercu-stone-edge.jpg')).toString('base64');
+const apercuTripleAxelB64 = fs.readFileSync(path.join(__dirname, 'apercu-triple-axel.jpg')).toString('base64');
 const installeur = `<!doctype html>
 <html lang="fr">
 <meta charset="utf-8">
@@ -94,8 +95,10 @@ const installeur = `<!doctype html>
 <h1>🎯 Calc Accuracy — la vraie proba de KO, précision incluse</h1>
 <p>Ajoute au <a href="https://calc.pokemonshowdown.com">calculateur de dégâts Showdown</a> la probabilité de KO réelle, précision des attaques incluse. Fonctionne sur les onglets <strong>One vs One</strong> et <strong>Champions</strong>.</p>
 <h2>À quoi ça ressemble</h2>
-<p class="astuce">Ce qui est en vert-bleu est ajouté par le bookmarklet : ici le calculateur annonce « guaranteed OHKO », mais Stone Edge ne touche que 80 % du temps — la vraie probabilité est donc 80 %.</p>
-<img class="apercu" src="data:image/jpeg;base64,${apercuB64}" alt="Aperçu : sous le résultat « guaranteed OHKO » du calculateur, le bookmarklet ajoute « Avec la précision (80 %) : 80 % de OHKO »">
+<p class="astuce">Ce qui est en vert-bleu est ajouté par le bookmarklet. Ici le calculateur annonce « guaranteed OHKO », mais Stone Edge ne touche que 80 % du temps — la vraie probabilité est donc 80 % :</p>
+<img class="apercu" src="data:image/jpeg;base64,${apercuStoneEdgeB64}" alt="Sous le résultat « guaranteed OHKO » du calculateur, le bookmarklet ajoute « Avec la précision (80 %) : 80 % de OHKO »">
+<p class="astuce">Et les accuracy checks sont comptés coup par coup : ce Triple Axel (3 coups à 90 %) met KO dès le 2ᵉ coup — 2 checks à réussir, donc 81 % de vraie proba (ni 90 %, ni 72,9 %) :</p>
+<img class="apercu" src="data:image/jpeg;base64,${apercuTripleAxelB64}" alt="Triple Axel « guaranteed OHKO » : le bookmarklet ajoute « Avec la précision (90 % × 2 accuracy checks) : 81 % de OHKO »">
 <h2>Installation</h2>
 <div class="etape"><strong>1.</strong> Affiche la barre de favoris : <code>Ctrl + Shift + B</code> (Windows) ou <code>⌘ + Shift + B</code> (Mac).</div>
 <div class="etape"><strong>2.</strong> Glisse ce bouton dans la barre de favoris :</div>
