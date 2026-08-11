@@ -126,7 +126,7 @@ const installeur = `<!doctype html>
 <ul>
   <li><strong>Rien ne s'installe sur l'ordinateur.</strong> Un bookmarklet est un simple favori de navigateur : il n'agit que sur la page du calculateur, au moment où on clique dessus, et se supprime comme n'importe quel favori.</li>
   <li><strong>Tout le code est visible.</strong> L'URL du favori contient l'intégralité du programme (dans « installation manuelle » ci-dessus, tu peux le lire en entier). Aucune requête réseau, aucune donnée collectée ou envoyée, aucun accès à tes comptes.</li>
-  <li><strong>Un doute ? Vérifie avant d'installer.</strong> Clic droit sur le bouton « Calc Accuracy » ci-dessus → « Copier l'adresse du lien » : c'est le programme en entier. Colle-le à Claude ou ChatGPT (« Que fait ce code ? Est-il sûr ? ») — réponse en trente secondes.</li>
+  <li><strong>Un doute ? Vérifie avant d'installer.</strong> Clic droit sur le bouton « Calc Accuracy » ci-dessus → « Copier l'adresse du lien » : c'est le programme en entier. Colle-le à Claude ou ChatGPT (« Que fait ce code ? Est-il sûr ? » — réponse en trente secondes) ou fais-le relire à quelqu'un qui code.</li>
 </ul>
 <script>
   (function () {
