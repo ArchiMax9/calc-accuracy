@@ -86,8 +86,10 @@ const installeur = `<!doctype html>
   code { background: #eceff3; padding: 1px 5px; border-radius: 4px; }
   h2 { font-size: 1.1rem; margin-top: 1.7em; }
   .apercu { width: 100%; border: 1px solid #d5dae1; border-radius: 10px; display: block; }
-  .citation { border-left: 3px solid rgb(13,148,136); margin: 1.3em 0; padding: .7em 1.1em; background: #fff; border-radius: 0 10px 10px 0; font-style: italic; }
-  .citation .qui { display: block; margin-top: .45em; font-style: normal; font-size: .9em; color: #5b6672; }
+  .citation { border-left: 3px solid rgb(13,148,136); margin: 1.3em 0; padding: .7em 1.1em; background: #fff; border-radius: 0 10px 10px 0; }
+  .citation .replique { display: block; font-style: italic; margin: .15em 0; }
+  .citation .replique strong { font-style: normal; }
+  .citation .qui { display: block; margin-top: .45em; font-size: .9em; color: #5b6672; }
   summary { cursor: pointer; background: #fff; border: 1px solid #9aa4b2; border-radius: 8px; padding: 10px 14px; font-weight: 600; }
   summary:hover { background: #eef1f5; }
   details { margin: 1.1em 0; }
@@ -96,8 +98,11 @@ const installeur = `<!doctype html>
 </style>
 <h1>🎯 Calc Accuracy — la vraie proba de KO, précision incluse</h1>
 <p>Ajoute au <a href="https://calc.pokemonshowdown.com">calculateur de dégâts Showdown</a> la probabilité de KO réelle, précision des attaques incluse. Fonctionne sur les onglets <strong>One vs One</strong> et <strong>Champions</strong>.</p>
-<blockquote class="citation">« Ce serait bien que le calculateur tienne compte de la précision des moves. »
-<span class="qui">— HARI · « Ouais, c'est vrai. Ça pourrait être bien. » — Redemption · <a href="https://youtu.be/q95L2plo8RI?t=2930">voir le moment (48:50)</a></span></blockquote>
+<blockquote class="citation">
+<span class="replique"><strong>HARI :</strong> « Ce serait bien que le calculateur tienne compte de la précision des moves. »</span>
+<span class="replique"><strong>Redemption :</strong> « Ouais, c'est vrai. Ça pourrait être bien. »</span>
+<span class="qui"><a href="https://youtu.be/q95L2plo8RI?t=2930">voir le moment (48:50)</a></span>
+</blockquote>
 <h2>À quoi ça ressemble</h2>
 <p class="astuce">Ce qui est en vert-bleu est ajouté par le bookmarklet. Ici le calculateur annonce « guaranteed OHKO », mais Stone Edge ne touche que 80 % du temps — la vraie probabilité est donc 80 % :</p>
 <img class="apercu" src="data:image/jpeg;base64,${apercuStoneEdgeB64}" alt="Sous le résultat « guaranteed OHKO » du calculateur, le bookmarklet ajoute « Avec la précision (80 %) : 80 % de OHKO »">
@@ -121,22 +126,34 @@ const installeur = `<!doctype html>
 <ul>
   <li><strong>Rien ne s'installe sur l'ordinateur.</strong> Un bookmarklet est un simple favori de navigateur : il n'agit que sur la page du calculateur, au moment où on clique dessus, et se supprime comme n'importe quel favori.</li>
   <li><strong>Tout le code est visible.</strong> L'URL du favori contient l'intégralité du programme (dans « installation manuelle » ci-dessus, tu peux le lire en entier). Aucune requête réseau, aucune donnée collectée ou envoyée, aucun accès à tes comptes.</li>
-  <li><strong>Un doute ? Vérifie par toi-même.</strong> Copie l'URL du bookmarklet et colle-la à Claude ou ChatGPT avec la question « Que fait ce code ? Est-il sûr ? » — ou fais-la relire à quelqu'un qui code. Le programme est court, la réponse prend trente secondes.</li>
+  <li><strong>Un doute ? Vérifie par toi-même.</strong> Copie l'URL du bookmarklet — <button id="copier-securite">Copier l'URL</button> <span id="copie-ok-securite"></span> — et colle-la à Claude ou ChatGPT avec la question « Que fait ce code ? Est-il sûr ? » — ou fais-la relire à quelqu'un qui code. Le programme est court, la réponse prend trente secondes.</li>
 </ul>
 <script>
   (function () {
     var zone = document.getElementById('zone');
-    document.getElementById('copier').addEventListener('click', function () {
-      var fini = function () {
-        var ok = document.getElementById('copie-ok');
-        ok.textContent = '✓ copié';
-        ok.className = 'ok';
-      };
-      var secours = function () { zone.select(); document.execCommand('copy'); fini(); };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(zone.value).then(fini, secours);
-      } else { secours(); }
-    });
+    function brancher(idBouton, idOk) {
+      var bouton = document.getElementById(idBouton);
+      if (!bouton) { return; }
+      bouton.addEventListener('click', function () {
+        var fini = function () {
+          var ok = document.getElementById(idOk);
+          ok.textContent = '✓ copié';
+          ok.className = 'ok';
+        };
+        var secours = function () {
+          var details = document.querySelector('details');
+          if (details) { details.open = true; }
+          zone.select();
+          document.execCommand('copy');
+          fini();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(zone.value).then(fini, secours);
+        } else { secours(); }
+      });
+    }
+    brancher('copier', 'copie-ok');
+    brancher('copier-securite', 'copie-ok-securite');
   })();
 </script>
 </html>
