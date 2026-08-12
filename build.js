@@ -95,6 +95,8 @@ const installeur = `<!doctype html>
   details { margin: 1.1em 0; }
   details[open] summary { margin-bottom: .7em; }
   ul li { margin: .5em 0; }
+  .pied { text-align: right; font-size: .72em; color: #98a1ad; margin-top: 3.5em; }
+  .pied a { color: inherit; }
 </style>
 <h1>🎯 Calc Accuracy — la vraie proba de KO, précision incluse</h1>
 <p>Ajoute au <a href="https://calc.pokemonshowdown.com">calculateur de dégâts Showdown</a> la probabilité de KO réelle, précision des attaques incluse. Fonctionne sur les onglets <strong>One vs One</strong> et <strong>Champions</strong>.</p>
@@ -129,6 +131,7 @@ const installeur = `<!doctype html>
   <li><strong>Tout le code est visible.</strong> L'URL du favori contient l'intégralité du programme (dans « installation manuelle » ci-dessus, tu peux le lire en entier). Aucune requête réseau, aucune donnée collectée ou envoyée, aucun accès à tes comptes.</li>
   <li><strong>Un doute ? Vérifie avant d'installer.</strong> Clic droit sur le bouton « Calc Accuracy » ci-dessus → « Copier l'adresse du lien » : c'est le programme en entier. Colle-le à Claude ou ChatGPT (« Que fait ce code ? Est-il sûr ? » — réponse en trente secondes) ou fais-le relire à quelqu'un qui code.</li>
 </ul>
+<p class="pied">Calc Accuracy est open source — <a href="https://github.com/ArchiMax9/calc-accuracy">code source sur GitHub</a></p>
 <script>
   (function () {
     var zone = document.getElementById('zone');
