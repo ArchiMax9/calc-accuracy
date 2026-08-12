@@ -232,7 +232,7 @@
         var res = (dr && dr[s]) ? dr[s][i - 1] : null;
         var info = res ? koAvecPrecision(res) : null;
         if (info && info.pct !== null && info.acc < 99.995) {
-          ecrire(t, '➜ ' + fmtPct(info.pct) + '%');
+          ecrire(t, '➜ ' + fmtPct(info.pct) + '% de ' + nhko(info.ko.n));
           titre(t, 'KO réel, précision incluse : « ' + info.ko.text + ' » × ' + fmtPct(info.acc) + '% de précision (' + info.tests + ' accuracy check' + (info.tests > 1 ? 's' : '') + ')');
         } else {
           ecrire(t, '');
@@ -344,7 +344,7 @@
   function toast(message) {
     var t = document.createElement('div');
     t.textContent = message;
-    t.style.cssText = 'position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:99999;background:rgb(40,40,48);color:rgb(255,255,255);padding:8px 16px;border-radius:8px;font:14px/1.4 sans-serif;box-shadow:0 2px 10px rgba(0,0,0,0.35);transition:opacity 0.4s;pointer-events:none;';
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:99999;background:rgb(40,40,48);color:rgb(255,255,255);padding:8px 16px;border-radius:8px;font:14px/1.4 sans-serif;box-shadow:0 2px 10px rgba(0,0,0,0.35);transition:opacity 0.4s;pointer-events:none;';
     document.body.appendChild(t);
     window.setTimeout(function () { t.style.opacity = '0'; }, 2200);
     window.setTimeout(function () { t.remove(); }, 2700);

@@ -35,8 +35,8 @@ le message « ✓ Calc Accuracy activé » confirme l'activation.
 
 ## Utilisation
 
-- **À côté de chaque move** (4 par Pokémon, les deux colonnes) : `➜ 50,8%` = la
-  probabilité de KO réelle de ce move. Rien ne s'affiche si le move ne peut pas
+- **À côté de chaque move** (4 par Pokémon, les deux colonnes) : `➜ 50,8% de 2HKO`
+  = la probabilité de KO réelle de ce move. Rien ne s'affiche si le move ne peut pas
   rater, ne fait pas de dégâts, ou si le calculateur ne donne pas de probabilité
   chiffrable (« possible 7HKO »). Une infobulle (survol) détaille le calcul.
 - **Sous le résultat principal** : la ligne en couleur détaille le calcul du move

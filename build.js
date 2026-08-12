@@ -104,8 +104,8 @@ const installeur = `<!doctype html>
 <span class="qui"><a href="https://youtu.be/q95L2plo8RI?t=2930">voir le moment (48:50)</a></span>
 </blockquote>
 <h2>À quoi ça ressemble</h2>
-<p class="astuce">Ce qui est en vert-bleu est ajouté par le bookmarklet. Ici le calculateur annonce 68,8 % de chance de OHKO — mais Focus Blast ne touche que 70 % du temps : 68,8 % × 70 % = 48,1 %. En réalité, moins d'une chance sur deux :</p>
-<img class="apercu" src="data:image/jpeg;base64,${apercuFocusBlastB64}" alt="Le calculateur affiche 68.8% chance to OHKO ; le bookmarklet ajoute « Avec la précision (70 %) : 48,1 % de OHKO »">
+<p class="astuce">Le programme ajoute du texte en vert sur le calculateur. Ici, le calculateur annonce un 2HKO garanti. Mais Focus Blast ne touche que 70 % du temps, et il faut les toucher tous les deux : 70 % × 70 % = 49 %. En réalité, moins d'une chance sur deux :</p>
+<img class="apercu" src="data:image/jpeg;base64,${apercuFocusBlastB64}" alt="Le calculateur affiche guaranteed 2HKO pour Focus Blast ; le bookmarklet ajoute « Avec la précision (70 % × 2 accuracy checks) : 49 % de 2HKO »">
 <p class="astuce">Et les accuracy checks sont comptés coup par coup : ce Triple Axel (3 coups à 90 %) met KO dès le 2ᵉ coup — 2 checks à réussir, donc 81 % de vraie proba (ni 90 %, ni 72,9 %) :</p>
 <img class="apercu" src="data:image/jpeg;base64,${apercuTripleAxelB64}" alt="Triple Axel « guaranteed OHKO » : le bookmarklet ajoute « Avec la précision (90 % × 2 accuracy checks) : 81 % de OHKO »">
 <h2>Installation</h2>
@@ -115,7 +115,8 @@ const installeur = `<!doctype html>
   <a class="bouton-glisser" href="${paye}">Calc Accuracy</a>
   <p class="astuce">(à glisser-déposer — un simple clic ici ne l'installe pas)</p>
 </div>
-<div class="etape"><strong>3.</strong> Ouvre <a href="https://calc.pokemonshowdown.com">calc.pokemonshowdown.com</a> puis clique sur le favori : le message « ✓ Calc Accuracy activé » confirme.</div>
+<div class="etape"><strong>3.</strong> Ouvre <a href="https://calc.pokemonshowdown.com">calc.pokemonshowdown.com</a> puis <strong>clique sur le favori</strong> : le message « ✓ Calc Accuracy activé » confirme.</div>
+<div class="etape"><strong>Important :</strong> contrairement à une extension, rien ne se lance tout seul — <strong>le favori est à recliquer à chaque visite</strong>, et aussi après un rafraîchissement de la page ou un changement d'onglet du site.</div>
 <details>
   <summary>🔧 Le glisser-déposer ne marche pas ? Cliquer ici pour l'installation manuelle</summary>
   <p>Copie l'URL ci-dessous (bouton), puis crée un favori (clic droit sur la barre de favoris → « Ajouter une page… ») et colle-la dans le champ URL :</p>
