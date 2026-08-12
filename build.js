@@ -66,7 +66,7 @@ function echapperHTML(s) {
 }
 const paye = echapperHTML(bookmarklet);
 /* captures d'écran d'exemple, intégrées à la page pour qu'elle reste un fichier unique */
-const apercuStoneEdgeB64 = fs.readFileSync(path.join(__dirname, 'apercu-stone-edge.jpg')).toString('base64');
+const apercuFocusBlastB64 = fs.readFileSync(path.join(__dirname, 'apercu-focus-blast.jpg')).toString('base64');
 const apercuTripleAxelB64 = fs.readFileSync(path.join(__dirname, 'apercu-triple-axel.jpg')).toString('base64');
 const installeur = `<!doctype html>
 <html lang="fr">
@@ -104,8 +104,8 @@ const installeur = `<!doctype html>
 <span class="qui"><a href="https://youtu.be/q95L2plo8RI?t=2930">voir le moment (48:50)</a></span>
 </blockquote>
 <h2>À quoi ça ressemble</h2>
-<p class="astuce">Ce qui est en vert-bleu est ajouté par le bookmarklet. Ici le calculateur annonce « guaranteed OHKO », mais Stone Edge ne touche que 80 % du temps — la vraie probabilité est donc 80 % :</p>
-<img class="apercu" src="data:image/jpeg;base64,${apercuStoneEdgeB64}" alt="Sous le résultat « guaranteed OHKO » du calculateur, le bookmarklet ajoute « Avec la précision (80 %) : 80 % de OHKO »">
+<p class="astuce">Ce qui est en vert-bleu est ajouté par le bookmarklet. Ici le calculateur annonce 68,8 % de chance de OHKO — mais Focus Blast ne touche que 70 % du temps : 68,8 % × 70 % = 48,1 %. En réalité, moins d'une chance sur deux :</p>
+<img class="apercu" src="data:image/jpeg;base64,${apercuFocusBlastB64}" alt="Le calculateur affiche 68.8% chance to OHKO ; le bookmarklet ajoute « Avec la précision (70 %) : 48,1 % de OHKO »">
 <p class="astuce">Et les accuracy checks sont comptés coup par coup : ce Triple Axel (3 coups à 90 %) met KO dès le 2ᵉ coup — 2 checks à réussir, donc 81 % de vraie proba (ni 90 %, ni 72,9 %) :</p>
 <img class="apercu" src="data:image/jpeg;base64,${apercuTripleAxelB64}" alt="Triple Axel « guaranteed OHKO » : le bookmarklet ajoute « Avec la précision (90 % × 2 accuracy checks) : 81 % de OHKO »">
 <h2>Installation</h2>

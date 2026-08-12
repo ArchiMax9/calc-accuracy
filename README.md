@@ -138,4 +138,4 @@ correspondance : `node build.js` régénère les fichiers à l'identique.
 | `source.js` | le même code, lisible et commenté — à lire pour auditer |
 | `build.js` | reconstruit `bookmarklet.txt` et `index.html` depuis `source.js` (`node build.js`) |
 | `demo.jpg` | capture d'écran du résultat sur le calculateur |
-| `apercu-stone-edge.jpg`, `apercu-triple-axel.jpg` | les captures d'exemple intégrées dans la page d'installation par `build.js` |
+| `apercu-focus-blast.jpg`, `apercu-triple-axel.jpg` | les captures d'exemple intégrées dans la page d'installation par `build.js` |
